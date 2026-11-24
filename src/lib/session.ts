@@ -1,5 +1,6 @@
 import "server-only";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { users } from "@/db/schema";
@@ -12,26 +13,33 @@ export async function requireAuth() {
   if (!(await isValidSession(token))) throw new Error("Not signed in");
 }
 
+/** True when the request carries a valid session. */
+export async function isSignedIn() {
+  const token = (await cookies()).get(SESSION_COOKIE)?.value;
+  return isValidSession(token);
+}
+
 /**
- * Week 1 is single-user: the first row in `users` is you.
- * It's created on first visit from APP_USER_NAME / APP_TIMEZONE.
+ * Single-user: the first row in `users` is you. It's created on first visit
+ * from APP_USER_NAME / APP_TIMEZONE; after that, Settings owns name and time zone.
  */
 export async function getCurrentUser() {
   const [existing] = await db.select().from(users).orderBy(users.id).limit(1);
+  if (existing) return existing;
   const tzEnv = process.env.APP_TIMEZONE ?? "UTC";
-  const timezone = isValidTimezone(tzEnv) ? tzEnv : "UTC";
+  const [created] = await db
+    .insert(users)
+    .values({ name: process.env.APP_USER_NAME ?? "Me", timezone: isValidTimezone(tzEnv) ? tzEnv : "UTC" })
+    .returning();
+  return created;
+}
 
-  if (!existing) {
-    const [created] = await db
-      .insert(users)
-      .values({ name: process.env.APP_USER_NAME ?? "Me", timezone })
-      .returning();
-    return created;
-  }
-  // Keep the stored time zone in sync with the env var.
-  if (existing.timezone !== timezone) {
-    await db.update(users).set({ timezone }).where(eq(users.id, existing.id));
-    return { ...existing, timezone };
-  }
-  return existing;
+/** For signed-in pages: redirects to login otherwise. */
+export async function requireUser() {
+  if (!(await isSignedIn())) redirect("/login");
+  return getCurrentUser();
+}
+
+export async function updateUser(id: number, patch: Partial<typeof users.$inferInsert>) {
+  await db.update(users).set(patch).where(eq(users.id, id));
 }

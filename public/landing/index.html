@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garden · a habit tracker that grows a garden</title>
+<meta name="description" content="Every habit you keep waters a plant. Scroll through a sample month and watch a garden grow, wilt and bloom.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1712'/%3E%3Cpath d='M16 26V15M16 15c0-4 3-7 8-7 0 4-3 7-8 7zM16 18c0-3-2.5-5.5-6.5-5.5 0 3 2.5 5.5 6.5 5.5z' stroke='%23F2B13C' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/landing/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/landing/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/landing/scrollcraft.css">
+<link rel="stylesheet" href="/landing/garden.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+</head>
+<body>
+
+<span data-sc-progress></span>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<!-- App chrome is the navigation. -->
+<header class="chrome">
+  <a class="chrome__mark" href="#day-one" aria-label="Garden, back to day one">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 32 32"><path d="M16 27V15M16 15c0-4 3-7 8-7 0 4-3 7-8 7zM16 18c0-3-2.5-5.5-6.5-5.5 0 3 2.5 5.5 6.5 5.5z" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+    <span>Garden</span>
+  </a>
+  <nav class="tabs" aria-label="Sample month">
+    <a href="#first-week">Today</a>
+    <a href="#day-twelve">Thirsty</a>
+    <a href="#month">Garden</a>
+    <a href="#seeds">Seeds</a>
+    <a href="#plant" class="tabs__mine">Plant yours</a>
+  </nav>
+</header>
+
+
+
+<main id="top">
+
+  <!-- 1 · CURIOSITY: the surface, already open on day 1. Layered planes. -->
+  <section class="hero" id="day-one" data-sc-act="flow" aria-labelledby="hero-h">
+    <div class="surface surface--hero">
+      <div class="scene-host" id="hero-scene"></div>
+      <div class="hero__copy">
+        <p class="hero__status"><span class="dot"></span>Day 1 · three seeds, planted this morning</p>
+        <h1 id="hero-h" class="hero__h">Every habit you keep waters a plant.</h1>
+        <p class="hero__sub">Garden is a habit tracker that grows. Scroll to live through a sample month.</p>
+      </div>
+      <aside class="panel hero__today" aria-labelledby="hero-today-h">
+        <div class="panel__head"><h2 id="hero-today-h">Today</h2><span><span id="hero-count">0</span> of 3 watered</span></div>
+        <ul class="rows" id="hero-today">
+          <li class="row"><span class="row__thumb"></span><span class="row__text"><span class="row__name">Read 20 min</span><span class="row__meta"></span></span><button type="button" class="water" data-water="read"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></button></li>
+          <li class="row"><span class="row__thumb"></span><span class="row__text"><span class="row__name">Drink 8 glasses</span><span class="row__meta"></span></span><button type="button" class="water" data-water="water"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></button></li>
+          <li class="row"><span class="row__thumb"></span><span class="row__text"><span class="row__name">Morning walk</span><span class="row__meta"></span></span><button type="button" class="water" data-water="walk"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></button></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 2 · SATISFACTION: pin. Scroll is the calendar: days 1 to 11. -->
+  <section id="first-week" data-sc-act="pin" data-sc-span="2.6">
+    <div data-sc-stage class="stage">
+      <div class="surface surface--split">
+        <div class="pane-garden">
+          <div class="scene-host" id="week-scene" role="img" aria-label="The sample garden, growing day by day"></div>
+          <p class="toast" id="week-toast" aria-live="polite"></p>
+        </div>
+        <section class="panel pane-today" aria-labelledby="week-h">
+          <div class="panel__head"><h2 id="week-h"><span id="week-day">Day 1</span></h2><span class="chip chip--water"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg><span id="week-held">0</span> rain days</span></div>
+          <ul class="rows" id="week-today"></ul>
+          <p class="legend">Plants grow with the streak: a sprout on day 1, a seedling at 3 days in a row, a bud at 7, in bloom at 14, fully grown at 30. Seven full days in a row earn a rain day.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · UNEASE: reveal. Day 12 is missed and the bed dries. -->
+  <section id="day-twelve" class="dry" data-sc-act="flow" aria-labelledby="dry-h">
+    <div class="dry__inner">
+      <div class="dry__text">
+        <p class="status-line"><span class="dot dot--straw"></span>Day 12 · 9:41 PM</p>
+        <h2 id="dry-h" class="h2">Read 20 min wasn't watered today.</h2>
+        <p class="body">The sunflower droops. Its 11 day streak is at risk, and tomorrow you choose whether to save it.</p>
+      </div>
+      <figure class="dry__figure">
+        <div class="scene-host" id="dry-base" role="img" aria-label="The garden on day 11, everything upright"></div>
+        <div class="dry__wipe" data-sc-reveal="left" data-sc-reveal-at="0.12 0.5">
+          <div class="scene-host" id="dry-top" role="img" aria-label="The garden on day 12, the sunflower drooping"></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 · RELIEF: flow. A real choice; the rest of the month follows it. -->
+  <section id="rain" class="rain" data-sc-act="flow" aria-labelledby="rain-h">
+    <div class="rain__card panel" data-sc-in>
+      <div class="rain__plant" id="rain-plant" aria-hidden="true"></div>
+      <div class="rain__body">
+        <p class="status-line status-line--straw"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>Day 13 · morning</p>
+        <h2 id="rain-h" class="h3">Your sunflower is thirsty.</h2>
+        <p class="body" id="rain-status" aria-live="polite">Thirsty since yesterday. Choose how to save it.</p>
+        <div class="rain__actions">
+          <button type="button" class="btn btn--water" data-choice="rain" aria-pressed="false"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>Use a rain day <span class="btn__note" id="rain-held">1 saved</span></button>
+          <button type="button" class="btn btn--ghost" data-choice="water" aria-pressed="false">Just water it today</button>
+        </div>
+        <p class="fine">Your choice carries into the rest of the month below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · AWE (the peak): pin, longest span. Days 13 to 30, then night. -->
+  <section id="month" class="peak" data-sc-act="pin" data-sc-span="3.6" aria-labelledby="peak-h">
+    <div data-sc-stage class="stage">
+      <div class="surface surface--peak">
+        <div class="scene-host" id="peak-scene" role="img" aria-label="The sample garden from day 13 to day 30"></div>
+        <div class="peak__head">
+          <h2 id="peak-h" class="sr-only">The rest of the month</h2>
+          <span class="chip chip--glass" id="peak-day">Day 13</span>
+        </div>
+        <p class="toast toast--center" id="peak-toast" aria-live="polite"></p>
+        <div class="peak__summary panel" data-sc-cue="0.9 1 0.04 0">
+          <h3>Month one</h3>
+          <dl>
+            <div><dt>Read 20 min</dt><dd id="sum-read"></dd></div>
+            <div><dt>Drink 8 glasses</dt><dd id="sum-water"></dd></div>
+            <div><dt>Morning walk</dt><dd id="sum-walk"></dd></div>
+            <div><dt>Longest streak</dt><dd id="sum-streak"></dd></div>
+            <div><dt>Rain days</dt><dd id="sum-rain"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · APPETITE: pan. The seed catalogue, labelled with facts. -->
+  <section id="seeds" data-sc-act="pan" data-sc-span="2.6" aria-labelledby="seeds-h">
+    <div data-sc-stage class="stage stage--seeds">
+      <div class="rail" data-sc-pan="0.04">
+        <div class="rail__lead">
+          <h2 id="seeds-h" class="h2">Seed catalogue</h2>
+          <p class="body">Seven plants. Five to start with, two you earn.</p>
+        </div>
+        <article class="specimen" data-sp="sunflower"><div class="specimen__art" data-sc-tilt="6"></div><h3>Sunflower</h3><p class="specimen__label">Starter seed</p><div class="specimen__stages"></div></article>
+        <article class="specimen" data-sp="fern"><div class="specimen__art" data-sc-tilt="6"></div><h3>Fern</h3><p class="specimen__label">Starter seed</p><div class="specimen__stages"></div></article>
+        <article class="specimen" data-sp="tulip"><div class="specimen__art" data-sc-tilt="6"></div><h3>Tulip</h3><p class="specimen__label">Starter seed</p><div class="specimen__stages"></div></article>
+        <article class="specimen" data-sp="lavender"><div class="specimen__art" data-sc-tilt="6"></div><h3>Lavender</h3><p class="specimen__label">Starter seed</p><div class="specimen__stages"></div></article>
+        <article class="specimen" data-sp="cactus"><div class="specimen__art" data-sc-tilt="6"></div><h3>Cactus</h3><p class="specimen__label">Starter seed</p><div class="specimen__stages"></div></article>
+        <article class="specimen" data-sp="monstera"><div class="specimen__art" data-sc-tilt="6"></div><h3>Monstera</h3><p class="specimen__label">Unlocks at 50 total check-ins</p><div class="specimen__stages"></div></article>
+        <article class="specimen specimen--night" data-sp="moonflower"><div class="specimen__art" data-sc-tilt="6"></div><h3>Moonflower</h3><p class="specimen__label">Unlocks with a 21 day streak</p><div class="specimen__stages"></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · READINESS: an input with a cursor in it. Last element on the page. -->
+  <section id="plant" class="close" data-sc-act="pin" data-sc-span="1.25" aria-labelledby="plant-h">
+    <div data-sc-stage class="stage stage--close">
+      <div class="close__grid">
+        <div class="close__plot"><div id="my-ghost" class="close__ghost" aria-hidden="true"></div><div id="my-plant" class="close__plant" aria-hidden="true"></div><div class="close__soil" aria-hidden="true"></div><p class="close__ghost-label" id="my-ghost-label"></p></div>
+        <form id="plant-form" class="close__form panel" novalidate data-sc-cue="0 1 0 0" data-sc-rise="0">
+          <h2 id="plant-h" class="h3">What will you grow first?</h2>
+          <label class="field__label" for="my-habit">Habit</label>
+          <input id="my-habit" name="habit" type="text" autocomplete="off" maxlength="60" placeholder="e.g. Practise guitar">
+          <fieldset class="species">
+            <legend class="field__label">Its plant</legend>
+            <label><input type="radio" name="my-sp" value="sunflower" checked><span>Sunflower</span></label>
+            <label><input type="radio" name="my-sp" value="fern"><span>Fern</span></label>
+            <label><input type="radio" name="my-sp" value="tulip"><span>Tulip</span></label>
+            <label><input type="radio" name="my-sp" value="lavender"><span>Lavender</span></label>
+            <label><input type="radio" name="my-sp" value="cactus"><span>Cactus</span></label>
+          </fieldset>
+          <div class="close__actions">
+            <button type="submit" class="btn btn--ghost" id="plant-go">Plant it</button>
+            <a class="btn btn--primary" id="cta" data-app-url="/new" href="/new">Start growing</a>
+          </div>
+          <p class="fine" id="plant-status" aria-live="polite">This only plants it here. Start growing opens the app with your habit filled in.</p>
+        </form>
+      </div>
+      <p class="colophon">Garden is a personal project by Nathanael, built with Next.js and PostgreSQL. The month above is sample data.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="status" data-sc-verify-state="d0">
+  <span class="status__label">Sample month</span>
+  <div class="trace" id="trace" role="group" aria-label="Thirty days of the sample month. Each square jumps to that day."></div>
+  <span class="status__day" id="trace-day" aria-live="polite">Day 1 · morning</span>
+</footer>
+
+<script src="/landing/scrollcraft.js"></script>
+<script src="/landing/plants.js"></script>
+<script src="/landing/icons.js"></script>
+<script src="/landing/garden.js"></script>
+<script>ScrollCraft.mount(document.body);</script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T03:52:53+00:00",
+  "title": "Design System: Garden",
+  "extensions": {
+    "colorMeta": {
+      "forest-ground": {
+        "role": "neutral",
+        "displayName": "Forest Ground",
+        "canonical": "oklch(19.4% 0.017 160.0)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#222624",
+          "#3d4440",
+          "#5a645e",
+          "#7b857f",
+          "#9fa7a2",
+          "#c5cbc7",
+          "#ecefed"
+        ]
+      },
+      "forest-surface": {
+        "role": "neutral",
+        "displayName": "Forest Surface",
+        "canonical": "oklch(24.1% 0.024 157.1)",
+        "tonalRamp": [
+          "#090c0a",
+          "#212723",
+          "#3b453f",
+          "#58655c",
+          "#78867d",
+          "#9da8a1",
+          "#c3cbc6",
+          "#ebf0ed"
+        ]
+      },
+      "forest-surface-2": {
+        "role": "neutral",
+        "displayName": "Forest Surface 2",
+        "canonical": "oklch(26.8% 0.026 157.7)",
+        "tonalRamp": [
+          "#090c0a",
+          "#202723",
+          "#3a453e",
+          "#57665c",
+          "#77877d",
+          "#9ca9a1",
+          "#c3ccc6",
+          "#ebf0ed"
+        ]
+      },
+      "forest-raised": {
+        "role": "neutral",
+        "displayName": "Forest Raised",
+        "canonical": "oklch(30.6% 0.030 159.7)",
+        "tonalRamp": [
+          "#080c0a",
+          "#1f2723",
+          "#39453e",
+          "#55665c",
+          "#75887d",
+          "#9ba9a1",
+          "#c2ccc6",
+          "#eaf0ec"
+        ]
+      },
+      "bone-ink": {
+        "role": "neutral",
+        "displayName": "Bone Ink",
+        "canonical": "oklch(93.7% 0.015 90.2)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423c",
+          "#646159",
+          "#858279",
+          "#a7a59e",
+          "#cbc9c4",
+          "#efeeeb"
+        ]
+      },
+      "sage-soft": {
+        "role": "neutral",
+        "displayName": "Sage Soft",
+        "canonical": "oklch(75.9% 0.025 139.4)",
+        "tonalRamp": [
+          "#0a0c09",
+          "#222721",
+          "#3d443c",
+          "#5b6558",
+          "#7c8679",
+          "#a0a89e",
+          "#c5cbc4",
+          "#ecf0eb"
+        ]
+      },
+      "sage-faint": {
+        "role": "neutral",
+        "displayName": "Sage Faint",
+        "canonical": "oklch(66.4% 0.027 143.4)",
+        "tonalRamp": [
+          "#090c09",
+          "#212721",
+          "#3c453c",
+          "#596559",
+          "#7a8679",
+          "#9ea89e",
+          "#c4cbc4",
+          "#ecf0eb"
+        ]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Lantern Amber",
+        "canonical": "oklch(80.2% 0.147 77.9)",
+        "tonalRamp": [
+          "#140800",
+          "#371f00",
+          "#5f3900",
+          "#895400",
+          "#ad7600",
+          "#c89d58",
+          "#e3c495",
+          "#feecd1"
+        ]
+      },
+      "amber-hover": {
+        "role": "primary",
+        "displayName": "Lantern Amber, lit",
+        "canonical": "oklch(84.9% 0.146 80.1)",
+        "tonalRamp": [
+          "#140900",
+          "#362000",
+          "#5d3a00",
+          "#875600",
+          "#ab7800",
+          "#c69e58",
+          "#e1c595",
+          "#fdecd1"
+        ]
+      },
+      "amber-ink": {
+        "role": "primary",
+        "displayName": "Amber Ink",
+        "canonical": "oklch(19.4% 0.030 78.3)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#29241d",
+          "#484136",
+          "#6a6051",
+          "#8b8171",
+          "#aca497",
+          "#cec8bf",
+          "#f1eee9"
+        ]
+      },
+      "water": {
+        "role": "secondary",
+        "displayName": "Rain Sky",
+        "canonical": "oklch(79.4% 0.076 235.7)",
+        "tonalRamp": [
+          "#040c13",
+          "#122834",
+          "#24465a",
+          "#386783",
+          "#5989a6",
+          "#86abc2",
+          "#b3cdde",
+          "#e2f1fb"
+        ]
+      },
+      "straw": {
+        "role": "tertiary",
+        "displayName": "Dry Straw",
+        "canonical": "oklch(78.7% 0.098 85.3)",
+        "tonalRamp": [
+          "#100a01",
+          "#2f2306",
+          "#523f10",
+          "#785d1c",
+          "#9a7e41",
+          "#b8a274",
+          "#d7c7a7",
+          "#f7eedb"
+        ]
+      },
+      "rust": {
+        "role": "tertiary",
+        "displayName": "Fallen Rust",
+        "canonical": "oklch(74.8% 0.108 38.8)",
+        "tonalRamp": [
+          "#150703",
+          "#3a1b11",
+          "#633323",
+          "#8f4c36",
+          "#b46d56",
+          "#ce9583",
+          "#e8beb1",
+          "#ffe8e0"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline (bone 10%)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423c",
+          "#646159",
+          "#858279",
+          "#a7a59e",
+          "#cbc9c4",
+          "#efeeeb"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong (bone 18%)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423c",
+          "#646159",
+          "#858279",
+          "#a7a59e",
+          "#cbc9c4",
+          "#efeeeb"
+        ]
+      },
+      "amber-soft": {
+        "role": "primary",
+        "displayName": "Amber Wash",
+        "tonalRamp": [
+          "#140800",
+          "#371f00",
+          "#5f3900",
+          "#895400",
+          "#ad7600",
+          "#c89d58",
+          "#e3c495",
+          "#feecd1"
+        ]
+      },
+      "amber-line": {
+        "role": "primary",
+        "displayName": "Amber Line",
+        "tonalRamp": [
+          "#140800",
+          "#371f00",
+          "#5f3900",
+          "#895400",
+          "#ad7600",
+          "#c89d58",
+          "#e3c495",
+          "#feecd1"
+        ]
+      },
+      "water-soft": {
+        "role": "secondary",
+        "displayName": "Rain Wash",
+        "tonalRamp": [
+          "#040c13",
+          "#122834",
+          "#24465a",
+          "#386783",
+          "#5989a6",
+          "#86abc2",
+          "#b3cdde",
+          "#e2f1fb"
+        ]
+      },
+      "water-line": {
+        "role": "secondary",
+        "displayName": "Rain Line",
+        "tonalRamp": [
+          "#040c13",
+          "#122834",
+          "#24465a",
+          "#386783",
+          "#5989a6",
+          "#86abc2",
+          "#b3cdde",
+          "#e2f1fb"
+        ]
+      },
+      "straw-soft": {
+        "role": "tertiary",
+        "displayName": "Straw Wash",
+        "tonalRamp": [
+          "#100a01",
+          "#2f2306",
+          "#523f10",
+          "#785d1c",
+          "#9a7e41",
+          "#b8a274",
+          "#d7c7a7",
+          "#f7eedb"
+        ]
+      },
+      "straw-line": {
+        "role": "tertiary",
+        "displayName": "Straw Line",
+        "tonalRamp": [
+          "#100a01",
+          "#2f2306",
+          "#523f10",
+          "#785d1c",
+          "#9a7e41",
+          "#b8a274",
+          "#d7c7a7",
+          "#f7eedb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Screen Title",
+        "purpose": "One per screen; 1.875rem, 2.25rem at >=960px. Bricolage."
+      },
+      "headline": {
+        "displayName": "Section Head",
+        "purpose": "Section heads within a screen. Bricolage."
+      },
+      "stat": {
+        "displayName": "Streak Numeral",
+        "purpose": "Streak, best streak and check-in counts; tabular. Bricolage."
+      },
+      "title": {
+        "displayName": "Card Title",
+        "purpose": "Card headings. Geist 600."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and habit names (600 in rows). Geist."
+      },
+      "meta": {
+        "displayName": "Meta Line",
+        "purpose": "Habit state line, captions, hints. Sage."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Weekday initials, unlock progress, small counts. Sentence case, no tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 1px 0 rgba(238, 234, 223, 0.05) inset, 0 10px 28px -12px rgba(2, 8, 5, 0.6)",
+        "purpose": "Every card. Rows and controls stay flat."
+      },
+      {
+        "name": "today-ring",
+        "value": "0 0 0 2px #eeeadf inset",
+        "purpose": "Today's cell in the month calendar."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "State transitions on buttons, rows, toggles, tabs."
+      },
+      {
+        "name": "ease-enter",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Plant growth entrance."
+      },
+      {
+        "name": "m-in",
+        "value": "150ms",
+        "purpose": "Colour and border transitions in."
+      },
+      {
+        "name": "m-out",
+        "value": "120ms",
+        "purpose": "Transitions out."
+      },
+      {
+        "name": "m-press",
+        "value": "90ms",
+        "purpose": "Press scale (0.97 buttons, 0.95 icon buttons, 0.94 water toggle)."
+      },
+      {
+        "name": "grow",
+        "value": "620ms ease-enter, scale 0.88 to 1, opacity 0.4 to 1, origin 50% 92%",
+        "purpose": "A plant growing in after watering."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.01ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "scene-wide",
+        "value": "700px"
+      },
+      {
+        "name": "sidebar",
+        "value": "960px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid #f2b13c; outline-offset: 3px (2px on inputs and choices)",
+      "purpose": "Every focusable element."
+    },
+    "glass": [
+      {
+        "name": "tabbar",
+        "value": "background rgba(14, 23, 18, 0.94); backdrop-filter blur(16px)"
+      },
+      {
+        "name": "chip-glass",
+        "value": "background rgba(14, 23, 18, 0.72); backdrop-filter blur(10px)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The next action on a screen: save, plant a habit.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Plant habit</button>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Geist,system-ui,sans-serif;cursor:pointer;transition:background-color 150ms var(--ease),border-color 150ms var(--ease),color 150ms var(--ease),transform 90ms var(--ease)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.ds-btn-primary{background:var(--amber);color:var(--amber-ink)}.ds-btn-primary:hover{background:var(--amber-hover)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Supporting actions: copy link, turn notifications on or off.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\">Copy link</button>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Geist,system-ui,sans-serif;cursor:pointer;transition:background-color 150ms var(--ease),border-color 150ms var(--ease),color 150ms var(--ease),transform 90ms var(--ease)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.ds-btn-secondary{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}.ds-btn-secondary:hover{border-color:var(--soft)}"
+    },
+    {
+      "name": "Rain Day Button",
+      "kind": "button",
+      "refersTo": "button-water",
+      "description": "Spending a rain day to save a thirsty streak.",
+      "html": "<button class=\"ds-btn ds-btn-water\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2\"/><path d=\"M16 14v6\"/><path d=\"M8 14v6\"/><path d=\"M12 16v6\"/></svg>Use a rain day · 2 left</button>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Geist,system-ui,sans-serif;cursor:pointer;transition:background-color 150ms var(--ease),border-color 150ms var(--ease),color 150ms var(--ease),transform 90ms var(--ease)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.ds-btn-water{min-height:44px;padding:0 16px;font-size:.875rem;background:var(--water-soft);color:var(--water);border-color:var(--water-line)}.ds-btn-water:hover{background:rgba(140,196,230,.22)}"
+    },
+    {
+      "name": "Water Toggle",
+      "kind": "custom",
+      "refersTo": "water-toggle",
+      "description": "One-tap check-in at the end of each habit row; soft blue at rest, solid amber when watered.",
+      "html": "<div style=\"display:flex;gap:12px\"><button class=\"ds-water\" aria-pressed=\"false\" aria-label=\"Water Read 20 min\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"/></svg></button><button class=\"ds-water\" aria-pressed=\"true\" aria-label=\"Undo Read 20 min for today\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></button></div>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-water{width:52px;height:52px;border-radius:26px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid var(--water-line);background:var(--water-soft);color:var(--water);cursor:pointer;transition:background-color 150ms var(--ease),color 150ms var(--ease),transform 90ms var(--ease)}.ds-water[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}.ds-water[aria-pressed=false]:hover{background:rgba(140,196,230,.24)}.ds-water:active{transform:scale(.94)}.ds-water:focus-visible{outline:2px solid var(--amber);outline-offset:3px}"
+    },
+    {
+      "name": "Habit Row",
+      "kind": "card",
+      "refersTo": "habit-row",
+      "description": "Plant plot, name, a worded state line, and the water toggle; the border carries the state.",
+      "html": "<div class=\"ds-row ds-row--thirsty\"><span class=\"ds-plot\"></span><span class=\"ds-row__text\"><span class=\"ds-row__name\">Stretch 10 min</span><span class=\"ds-row__meta\" style=\"color:var(--straw)\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"/></svg>Thirsty · 6 day streak at risk</span></span><button class=\"ds-water\" aria-pressed=\"false\" aria-label=\"Water Stretch 10 min\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"/></svg></button></div><div class=\"ds-row ds-row--done\" style=\"margin-top:8px\"><span class=\"ds-plot\"></span><span class=\"ds-row__text\"><span class=\"ds-row__name\">Morning walk</span><span class=\"ds-row__meta\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.4 1.1 1.4 2 2.5 2.3z\"/></svg>Bloom · 17 day streak</span></span><button class=\"ds-water\" aria-pressed=\"true\" aria-label=\"Undo Morning walk for today\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></button></div>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-row{display:flex;align-items:center;gap:12px;padding:10px 10px 10px 12px;border-radius:20px;background:var(--surface);border:1px solid var(--line);font-family:Geist,system-ui,sans-serif;color:var(--ink);max-width:420px;transition:border-color 150ms var(--ease)}.ds-row--done{border-color:var(--amber-line)}.ds-row--thirsty{border-color:var(--straw-line)}.ds-row:hover{border-color:var(--line-strong)}.ds-plot{width:52px;height:52px;flex:none;border-radius:50%;background:radial-gradient(circle at 50% 30%,#22342a,#1b2a21 70%)}.ds-row__text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.ds-row__name{font-weight:600}.ds-row__meta{font-size:.875rem;line-height:1.4;color:var(--soft)}.ds-row__meta svg{display:inline-block;vertical-align:-2px;margin-right:5px}.ds-water{width:52px;height:52px;border-radius:26px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid var(--water-line);background:var(--water-soft);color:var(--water);cursor:pointer}.ds-water[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}.ds-water:focus-visible{outline:2px solid var(--amber);outline-offset:3px}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Forest surface container with a soft card lift; rescue and growth cards take a state border.",
+      "html": "<section class=\"ds-card\"><h3 class=\"ds-card__h\">No phone after 11 grew into a seedling</h3><p class=\"ds-card__p\">3 days in a row. 4 more to bud.</p></section>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-card{background:var(--surface);border:1px solid rgba(242,177,60,.45);border-radius:20px;padding:16px;box-shadow:0 1px 0 rgba(238,234,223,.05) inset,0 10px 28px -12px rgba(2,8,5,.6);font-family:Geist,system-ui,sans-serif;color:var(--ink);max-width:420px}.ds-card__h{margin:0 0 6px;font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1.25}.ds-card__p{margin:0;font-size:.875rem;color:var(--soft)}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Field sunk to the ground colour, label above, hint or rust error below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-h\">Habit</label><input id=\"ds-h\" class=\"ds-input\" placeholder=\"Read 20 min\"><p class=\"ds-hint\">Days off never count against your streak.</p></div>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-field{display:flex;flex-direction:column;gap:8px;font-family:Geist,system-ui,sans-serif;max-width:360px}.ds-label{font-size:.875rem;font-weight:600;color:var(--soft)}.ds-input{box-sizing:border-box;width:100%;min-height:52px;padding:0 16px;border-radius:14px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font:inherit;font-size:1rem}.ds-input::placeholder{color:var(--faint)}.ds-input:hover{border-color:var(--soft)}.ds-input:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-color:transparent}.ds-hint{margin:0;font-size:.875rem;color:var(--faint)}"
+    },
+    {
+      "name": "Rain Day Chip",
+      "kind": "chip",
+      "refersTo": "chip-water",
+      "description": "Count of rain days held; links to the rain-day screen.",
+      "html": "<a href=\"#\" class=\"ds-chip-water\" aria-label=\"2 rain days saved\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2\"/><path d=\"M16 14v6\"/><path d=\"M8 14v6\"/><path d=\"M12 16v6\"/></svg>2</a>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-chip-water{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--water-line);background:var(--water-soft);color:var(--water);font:600 .875rem Geist,system-ui,sans-serif;text-decoration:none}.ds-chip-water:hover{background:rgba(140,196,230,.22)}.ds-chip-water:focus-visible{outline:2px solid var(--amber);outline-offset:3px}"
+    },
+    {
+      "name": "Tab Bar",
+      "kind": "nav",
+      "refersTo": "nav-tab-active",
+      "description": "Mobile bottom navigation; becomes a 240px sidebar at 960px.",
+      "html": "<nav class=\"ds-tabbar\" aria-label=\"Main\"><a href=\"#\" aria-current=\"page\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .7-1.5l7-6a2 2 0 0 1 2.6 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Today</a><a href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.4 1.1 1.4 2 2.5 2.3z\"/></svg>Stats</a><a href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2\"/><path d=\"M16 14v6\"/><path d=\"M8 14v6\"/><path d=\"M12 16v6\"/></svg>Rain</a></nav>",
+      "css": ":root{--bg:#0e1712;--surface:#16231b;--line:rgba(238,234,223,.1);--line-strong:rgba(238,234,223,.18);--ink:#eeeadf;--soft:#a9b5a6;--faint:#8a9889;--amber:#f2b13c;--amber-hover:#ffc24f;--amber-ink:#1c1305;--amber-line:rgba(242,177,60,.38);--water:#8cc4e6;--water-soft:rgba(140,196,230,.13);--water-line:rgba(140,196,230,.36);--straw:#d6b56e;--straw-line:rgba(214,181,110,.4);--rust:#e8957a;--ease:cubic-bezier(.2,.8,.2,1)}.ds-tabbar{display:flex;justify-content:space-around;height:72px;padding:6px 8px;background:rgba(14,23,18,.94);border-top:1px solid var(--line);backdrop-filter:blur(16px);font-family:Geist,system-ui,sans-serif;max-width:390px}.ds-tabbar a{flex:1;max-width:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:52px;border-radius:14px;text-decoration:none;font-size:11.5px;font-weight:500;color:var(--faint);transition:color 150ms var(--ease)}.ds-tabbar a:hover{color:var(--ink)}.ds-tabbar a[aria-current=page]{color:var(--amber);font-weight:600}.ds-tabbar a:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Scoreboard",
+    "overview": "Garden is a dark forest bed at night with the habits growing in it. The ground is a deep green-black, the surfaces are slightly lifted bands of the same forest, and the text is bone rather than white. A streak is never a flame counter or a progress ring: it is a plant, drawn parametrically, whose size is the streak. The illustration carries the colour and the life; the interface around it stays quiet, rounded and low-contrast so the plants and the one warm accent read first.\n\nDensity is calm and single-column on a phone (560px reading column), opening to a 1080px wide page only for the garden scene and the stats grid. Every state the garden can be in (watered, thirsty, dry, rest, saved by rain) is told in words as well as tone, so the colour system is a second channel, never the only one. Motion is short and physical: a press shrinks to 0.97, a watered plant grows in over 620ms, and everything collapses to near-instant under reduced motion.",
+    "keyCharacteristics": [
+      "Dark forest ground with tonal surfaces, bone ink, sage secondary text.",
+      "One warm accent (amber) for action and for kept streaks; status tones are reserved, not decorative.",
+      "Pill-shaped controls, 20px cards, round plots for plants.",
+      "Bricolage Grotesque for screen titles, section heads and big numerals; Geist for everything else.",
+      "A layered SVG garden scene whose sky follows the user's local hour.",
+      "State always spelled out in words beside its colour and icon."
+    ],
+    "rules": [
+      {
+        "name": "The One Lantern Rule",
+        "body": "Amber means \"do this\" or \"you kept it\". Nothing decorative in the interface is amber; if an element is amber it is either the next action or a kept streak.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reserved Weather Rule",
+        "body": "Blue, straw and rust are states, not accents. Blue appears only where water or rain is involved; straw only on thirsty habits; rust only on dry/lost habits and form errors. This rule governs interface chrome. The garden scene and the plant illustrations have their own palette (blue skies, red tulips, violet lavender, pink cactus bloom) and are exempt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Said-Twice Rule",
+        "body": "A status colour never appears without the word for it (\"Thirsty · 6 day streak at risk\", \"Dry · streak lost\", \"saved by a rain day\") and, in rows, an icon. Colour is the second channel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Packet Title Rule",
+        "body": "Bricolage is for titles, section heads and numerals only. Body text, buttons, rows, labels and navigation are Geist.",
+        "section": "typography"
+      },
+      {
+        "name": "The Plain Label Rule",
+        "body": "Labels are sentence case at normal tracking. No uppercase, letter-spaced tags.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumb Rule",
+        "body": "Every touch target is at least 44px (buttons 48px, the water toggle 52px, inputs 52px, rows 56px+).",
+        "section": "layout"
+      },
+      {
+        "name": "The Soft Night Rule",
+        "body": "Shadows are diffuse and dark-on-dark. Nothing has a hard, offset or coloured shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use amber (`#f2b13c`) only for the next action and for kept streaks; text on it is always `#1c1305`.",
+      "Do write the state in words next to every status colour: \"Thirsty\", \"Dry\", \"Rest day\", \"saved by a rain day\".",
+      "Do put plants in round plots or the scene; let the drawing carry the colour.",
+      "Do keep every control a pill and every container rounded (20px cards, 24px scene, 14px inputs).",
+      "Do keep touch targets at 44px or more; the check-in toggle is 52px.",
+      "Do use Bricolage only for screen titles, section heads and numerals; everything else is Geist.",
+      "Do switch the bottom tab bar to the 240px sidebar at 960px and swap the scene composition at 700px rather than stretching it."
+    ],
+    "donts": [
+      "Don't use blue, straw or rust in interface chrome outside their states (water/rain, thirsty, dry/error). The scene and plant illustrations are exempt.",
+      "Don't replace the plant with a flame counter, progress ring or checklist tick as the streak's main display.",
+      "Don't use uppercase, letter-spaced labels or tags above headings.",
+      "Don't add hard, offset or coloured shadows; depth is tonal plus one soft card lift.",
+      "Don't use pure white or pure black; text is bone `#eeeadf` on forest `#0e1712`."
+    ]
+  }
+}

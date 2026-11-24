@@ -1,77 +1,83 @@
-# 🌱 Garden — a habit tracker that grows a garden
+# Garden
 
-Week 1: habits + daily check-in, streaks and growth stages computed from a log.
-Built with Next.js 16 (App Router, Server Actions), PostgreSQL and Drizzle ORM.
+A habit tracker where every habit is a plant, and your streak decides how tall it grows.
+Next.js 16 (App Router, Server Actions, Cache Components), PostgreSQL, Drizzle ORM.
+Mobile-first and installable to your home screen.
+
+## The rules
+
+- **Growth follows the streak.** Sprout at 1 day in a row, seedling at 3, bud at 7, bloom at 14, fully grown at 30.
+- **Miss one day:** the plant is thirsty and the streak is at risk. Only a **rain day** saves it.
+- **Miss two, or water again without a rain day:** the streak is lost and the plant starts over from a sprout. Your best streak stays on record.
+- **Rain days:** earn one for every 7 full days in a row (every habit due that day watered). Hold up to 3. A rain day keeps a streak but never adds a check-in.
+- **Days off** (a habit not scheduled that day) never count against you.
+- **Unlocks:** Monstera at 50 total check-ins, Moonflower with a 21 day streak. Decorations: lantern (7 day streak), stone path (75 check-ins), bench (30 day streak), wind chime (100 check-ins).
+
+All of it is computed from the log in `src/lib/garden.ts` and unit-tested in `src/lib/garden.test.ts`.
 
 ## Run it locally
 
 ```bash
 npm install
-cp .env.example .env        # then fill in the values
-npm run db:migrate          # creates the tables
+cp .env.example .env        # Windows: copy .env.example .env
+npm run db:migrate          # creates or upgrades the tables
 npm run dev                 # http://localhost:3000
 ```
 
-You need a Postgres database. The easiest options are a free [Neon](https://neon.tech) or
-[Supabase](https://supabase.com) project (paste its connection string into `DATABASE_URL`),
-or local Postgres via Docker:
+Signed out, `/` shows the landing page (`public/landing/`); every other page asks for `APP_PASSWORD`.
 
-```bash
-docker run -d --name garden-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=garden -p 5432:5432 postgres:16
-```
+## Pages
+
+| Route | What it is |
+| --- | --- |
+| `/` | Today: the garden strip, rain-day rescues, the habits due today |
+| `/garden` | The whole garden (sky follows your local time), plants and decorations |
+| `/habits/[id]` | One plant: streak, best, month calendar, edit, archive |
+| `/new` | Plant a habit (name, plant, days, reminder). Accepts `?habit=&plant=` from the landing page |
+| `/stats` | Week, month or all-time record, each habit, by weekday |
+| `/seeds` | Every plant, what unlocks it, how plants grow |
+| `/rain` | Rain days saved, progress to the next, history |
+| `/settings` | Profile and time zone, reminders, sharing, archived habits, CSV export |
+| `/g/[slug]` | Your public, read-only garden (only when sharing is on) |
+
+## Reminders
+
+1. `npx web-push generate-vapid-keys` and put the two keys in `.env` (and in Vercel).
+2. Set `CRON_SECRET` to a long random string.
+3. In the app: You → Notifications on this device → Turn on. On iPhone, add Garden to the home screen first.
+4. Something must call `GET /api/cron/reminders` every 15 minutes with the header
+   `Authorization: Bearer <CRON_SECRET>`. Vercel Hobby only allows daily cron jobs, so use a free
+   scheduler such as cron-job.org (it supports custom headers). On Vercel Pro you can add a
+   `vercel.json` cron instead; Vercel sends the same header automatically.
+
+Each habit is reminded at most once a day, only if it is due and not watered yet. If its streak
+is at risk and "Thirsty plant nudge" is on, the reminder says so.
+
+## Deploy
+
+Push to GitHub, import on Vercel, add every variable from `.env.example`, then run
+`npm run db:migrate` once against the production `DATABASE_URL`.
 
 ## Scripts
 
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Dev server |
-| `npm test` | Unit tests for streak / date logic (Vitest) |
-| `npm run db:generate` | Create a new migration after editing `src/db/schema.ts` |
+| `npm test` | Unit tests for the garden rules (Vitest) |
+| `npm run db:generate` | New migration after editing `src/db/schema.ts` |
 | `npm run db:migrate` | Apply migrations |
-| `npm run db:studio` | Browse the database in Drizzle Studio |
 
-## How it's organised
+## Project map
 
 ```
-src/
-  db/schema.ts        users, habits, habit_logs
-  db/index.ts         Drizzle client
-  lib/dates.ts        "today" in the user's time zone, date maths
-  lib/streak.ts       current/longest streak, growth stage (pure functions)
-  lib/streak.test.ts  tests for the above
-  lib/plants.ts       plant types (emoji placeholders for now)
-  lib/auth.ts         password-gate token helpers
-  lib/session.ts      requireAuth(), getCurrentUser()
-  proxy.ts            redirects to /login without a session (Next 16's "middleware")
-  app/page.tsx        the garden / check-in page
-  app/actions.ts      createHabit, toggleToday, archiveHabit
-  app/login/page.tsx  password login
+src/lib/garden.ts        the rules: streaks, wilting, rain days, unlocks, weather, stats
+src/lib/data.ts          loads a user's garden from the database and applies the rules
+src/lib/plant-art.js     parametric plant drawings (shared with the landing page)
+src/lib/scene.ts         the garden scene SVG
+src/components/          server UI (garden-ui.tsx) and client UI (client.tsx)
+src/app/(app)/           the signed-in pages
+src/app/actions.ts       every write: check-in, rain day, habits, settings, push
+src/app/api/cron/        reminder sender
+public/landing/          the scroll landing page (static)
+PRODUCT.md, DESIGN.md    product truth and the design system
 ```
-
-## Design decisions
-
-- **Event log, not counters.** `habit_logs` has one row per habit per completed day
-  (unique on `habit_id, log_date`). Streaks and growth stages are computed from it,
-  so undoing a check-in or changing the growth rules never corrupts anything.
-- **Local dates.** `log_date` is a `DATE` in the user's time zone (`APP_TIMEZONE`),
-  so 11pm in Kuala Lumpur counts for the right day.
-- **Streak grace.** If today isn't done yet, the streak still shows yesterday's count
-  until the day ends.
-- **Growth is by total completions** (1, 3, 7, 14, 30), so a broken streak never
-  takes away earned progress.
-- **Archive, don't delete.** Archived habits keep their history.
-- **Single-user password gate** for now (`APP_PASSWORD`). Server Actions re-check the
-  session, not just `proxy.ts`. Swap in Auth.js / Better Auth when you want accounts.
-
-## Deploy (free)
-
-1. Push to GitHub, import the repo on [Vercel](https://vercel.com).
-2. Add the env vars from `.env.example` in the Vercel project settings
-   (use a strong `APP_PASSWORD` and `openssl rand -hex 32` for `SESSION_SECRET`).
-3. Run `npm run db:migrate` once against the production `DATABASE_URL`.
-
-## Next up (Week 2)
-
-- Real plant art per growth stage (SVG / sprites) instead of emoji
-- Wilting after a missed day, reviving on the next check-in
-- A garden view that lays the plants out together

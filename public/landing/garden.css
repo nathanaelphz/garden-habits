@@ -39,6 +39,7 @@
   transition: background-color 160ms var(--sc-ease-out), color 160ms var(--sc-ease-out);
 }
 .tabs a[aria-current] { color: var(--sc-ink); background: var(--sc-surface); box-shadow: var(--sc-edge); }
+.tabs a.tabs__login { color: var(--sc-ink); margin-left: 8px; box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sc-ink) 22%, transparent); }
 .tabs a.tabs__mine { color: var(--sc-accent-ink); background: var(--sc-accent); font-weight: 600; margin-left: 8px; }
 @media (hover: hover) and (pointer: fine) { .tabs a:not(.tabs__mine):hover { color: var(--sc-ink); } .tabs a.tabs__mine:hover { background: #FFC24F; } }
 .tabs a:active { transform: scale(.97); }
@@ -267,6 +268,8 @@
   .chrome__mark span { display: none; }
   .tabs a { padding: 0 10px; font-size: 13px; height: 34px; }
   .tabs a.tabs__mine { margin-left: 4px; }
+  .tabs a[href="#day-twelve"], .tabs a[href="#seeds"] { display: none; }
+  .tabs a.tabs__login { margin-left: 4px; }
   .status__label { display: none; }
   .status__day { min-width: 0; font-size: 11px; }
   .trace { gap: 2px; justify-content: flex-start; }

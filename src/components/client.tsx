@@ -23,17 +23,21 @@ export function TabBar() {
 
 /** The nav itself; also the static fallback (no current tab) while the path streams in. */
 export function TabLinks({ path }: { path: string }) {
-  const current = (href: string) => (href === "/" ? path === "/" || path.startsWith("/habits") || path === "/new" : path.startsWith(href));
+  // Highlight the tapped tab immediately, before the next page has arrived from the server.
+  const [tapped, setTapped] = useState<string | null>(null);
+  useEffect(() => setTapped(null), [path]);
+  const at = tapped ?? path;
+  const current = (href: string) => (href === "/" ? at === "/" || at.startsWith("/habits") || at === "/new" : at.startsWith(href));
   return (
     <nav className="tabbar" aria-label="Main">
       <span className="tabbar__brand"><Sprout size={22} aria-hidden="true" />Garden</span>
       {TABS.map(({ href, label, Icon }) => (
-        <Link key={href} href={href} aria-current={current(href) ? "page" : undefined}>
+        <Link key={href} href={href} onClick={() => setTapped(href)} aria-current={current(href) ? "page" : undefined}>
           <Icon size={22} strokeWidth={current(href) ? 2.2 : 1.8} aria-hidden="true" />
           {label}
         </Link>
       ))}
-      <Link href="/rain" className="tabbar__extra" aria-current={path.startsWith("/rain") ? "page" : undefined}>
+      <Link href="/rain" className="tabbar__extra" onClick={() => setTapped("/rain")} aria-current={at.startsWith("/rain") ? "page" : undefined}>
         <CloudRain size={22} aria-hidden="true" />Rain days
       </Link>
     </nav>

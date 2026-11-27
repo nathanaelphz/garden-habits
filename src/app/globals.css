@@ -228,3 +228,11 @@ input, select { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* Loading placeholder for pages streaming in: a title bar and two card shapes, so a tap never shows an empty screen. */
+.page[aria-busy="true"]:empty::before,
+.page[aria-busy="true"]:empty::after { content: ""; display: block; border-radius: 20px; background: var(--surface); animation: busy 1.2s ease-in-out infinite alternate; }
+.page[aria-busy="true"]:empty::before { width: 55%; height: 40px; border-radius: 12px; margin-bottom: var(--s5); }
+.page[aria-busy="true"]:empty::after { height: 280px; }
+@keyframes busy { from { opacity: 0.5; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .page[aria-busy="true"]:empty::before, .page[aria-busy="true"]:empty::after { animation: none; } }

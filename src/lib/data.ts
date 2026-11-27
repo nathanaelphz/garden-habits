@@ -1,5 +1,5 @@
 import "server-only";
-import { eq, inArray } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { habitLogs, habits, rainDayUses, type Habit, type User } from "@/db/schema";
 import { todayInTz } from "./dates";
@@ -16,14 +16,15 @@ export async function loadGarden(user: User) {
   const today = todayInTz(user.timezone);
   const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: user.timezone, hour: "2-digit", hourCycle: "h23" }).format(new Date()));
 
-  const rows = await db.select().from(habits).where(eq(habits.userId, user.id)).orderBy(habits.createdAt, habits.id);
-  const ids = rows.map((h) => h.id);
-  const [logs, uses] = ids.length
-    ? await Promise.all([
-        db.select({ habitId: habitLogs.habitId, logDate: habitLogs.logDate }).from(habitLogs).where(inArray(habitLogs.habitId, ids)),
-        db.select().from(rainDayUses).where(inArray(rainDayUses.habitId, ids)),
-      ])
-    : [[], []];
+  // One round trip: habits, their logs and rain-day uses in parallel (joined on the owner),
+  // instead of habits first and the rest after. Each round trip to the database costs latency.
+  const [rows, logs, uses] = await Promise.all([
+    db.select().from(habits).where(eq(habits.userId, user.id)).orderBy(habits.createdAt, habits.id),
+    db.select({ habitId: habitLogs.habitId, logDate: habitLogs.logDate }).from(habitLogs)
+      .innerJoin(habits, eq(habitLogs.habitId, habits.id)).where(eq(habits.userId, user.id)),
+    db.select({ habitId: rainDayUses.habitId, coveredDate: rainDayUses.coveredDate, usedOn: rainDayUses.usedOn }).from(rainDayUses)
+      .innerJoin(habits, eq(rainDayUses.habitId, habits.id)).where(eq(habits.userId, user.id)),
+  ]);
 
   const all: GardenHabit[] = rows.map((h) => {
     const done = new Set(logs.filter((l) => l.habitId === h.id).map((l) => l.logDate));
